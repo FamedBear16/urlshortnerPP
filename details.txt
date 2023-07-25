@@ -1,0 +1,99 @@
+You can use Power Shell or CMD as terminal
+
+In PowerShell set this option if when using the virtual enviroment you get 
+Activate.ps1 cannot be loaded
+
+> Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
+> Get-ExecutionPolity
+
+
+
+
+
+MAC				WINDOWS
+ls				dir
+pwd				echo %cd%
+export = FLASK_APP=hello	$env:FLASK_APP = "hello.py" // set FLASK_APP=hello 
+
+
+-------------------- INSTALLING THE VIRTUAL ENVIRONMENT -------------------
+You can also use python -m venv myvenv as an alternative
+
+			//Install pipenv in python
+> pip3 install pipenv 	
+
+			
+			//Creates a virtual environment: pipfile, pifile.lock and an
+				environment directory)
+> pipenv install 	
+
+			//To find out where the director is:
+> pipenv shell 		//to activate the environment
+> pipenv --venv 	//to get you the full path of the directory
+
+
+
+			//Or To Crete it in the Project Folder, type before installation
+> set PIPENV_VENV_IN_PROJECT=1 
+
+
+
+		//To enter and exit the virtual environment
+> pipenv shell
+> exit
+
+
+--------------------- SET THE Virtual ENV PYTHON .exe in VS CODE ---------
+
+
+
+	You need to pick the python intepreter in the virtual environment!!!
+	IN VS Code poin to the following directory
+> pipenv shell 	
+> pipenv --venv
+
+The you will need to selct the /scripts/python.exe file inside
+ this virutal environment as interpreter.
+Flask has been installed only in the local environment, not the global one.
+
+
+--------------------- INSTALLING FLASK IN THE VIRTUAL ENVIRONMENT ---------
+
+> pipenv install flask
+> pip list //show the installed packages
+
+
+		/create a hello.py file
+
+from flask import Flask
+app = Flask(__name__)
+print(__name__)
+
+@app.route('/')
+def index():
+    return 'Hello, world!'
+
+@app.route('/about')
+def about():
+    return 'This is the About page.'
+
+if __name__ == '__main__':
+    app.run()
+
+
+
+			//Activate flask server
+
+> pipenv shell
+> flask --app hello.py:app run
+
+or in Powershell: // in CMD
+
+> pipenv shell
+> $env:FLASK_APP = "hello.py" //set FLASK_APP=hello 
+> flask run
+> $env:FLASK_ENV="development" // set FLASK_ENV=development or production
+> $env:FLASK_ENV //to see the value
+
+
+
