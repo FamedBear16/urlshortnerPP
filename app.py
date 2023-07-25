@@ -60,14 +60,9 @@ def your_url():
 if __name__ == '__main__':
     app.run()
 
-# Start Command in Render: DEfault Value
-# gunicorn your_application.wsgi
-# Replace with. it tells python that def app is in app.py
-# >gunicorn app:app
 
-# pip install gunicorn
-# gunicorn app:app
-
+# NOTE: the <script scr:static\JS\scrip.js><\script? the src is CASE SENSITIVE on the server
+# See details.txt for full explanation on how to deploy
 # git add .
 # git commit -m "Initial commit"
 # git push origin master

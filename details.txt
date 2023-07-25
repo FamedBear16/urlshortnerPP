@@ -97,11 +97,18 @@ or in Powershell: // in CMD
 
 
 			//DEPLOYMENT
+
 create account on
 	render.com	  //webhost
 	github.com	  //Code Repository
 
+
+[Optional] 
+0.0 pip install gunicorn 	//This is required by render.com. You do not need to install localy, but you need to 					add it to requirements.txt
+
+
 1. Upload files in Gifhub
+
 
 1.1 The first time
 	git init
@@ -131,14 +138,30 @@ Name: urlshortner
 Region: EUCentral
 Repository: https://github.com/FamedBear16/urlshortnerPP
 Branch: Master
-Build Command: pip install -r requirements.txt
-Start Command: gunicorn app:app                        //app.py with a app = Flask(__name__)
+Build Command: pip install -r requirements.txt		//Install all the dependency remove version numbers!
+Start Command: gunicorn app:app                        //you need to have app.py with a app = Flask(__name__)
 
 
 
-//CREATE this file
+//CREATE requirements.txt 
 
-3. Requiremnts.txt
-Flask
-Gunicorn
+1.1 pip freeze > requirements.txt  
+    Remove all the version numbers and add Gunicor (if you have not installed it. It is required by the server)  
+		blinker
+		click
+		colorama
+		Flask
+		itsdangerous
+		Jinja2
+		MarkupSafe
+		Werkzeug
+		Gunicorn
+
+
+
+//OR Just type
+
+2. Requiremnts.txt
+	Flask
+	Gunicorn
 
