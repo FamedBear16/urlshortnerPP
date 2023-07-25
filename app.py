@@ -67,3 +67,7 @@ if __name__ == '__main__':
 
 # pip install gunicorn
 # gunicorn app:app
+
+# git add .
+# git commit -m "Initial commit"
+# git push origin master

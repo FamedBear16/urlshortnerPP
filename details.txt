@@ -96,4 +96,49 @@ or in Powershell: // in CMD
 > $env:FLASK_ENV //to see the value
 
 
+			//DEPLOYMENT
+create account on
+	render.com	  //webhost
+	github.com	  //Code Repository
+
+1. Upload files in Gifhub
+
+1.1 The first time
+	git init
+	git add .
+	git commit -m "Initial commit"
+	git remote add origin <repository-url>
+	git push -u origin master
+
+1.2 To keep updating
+
+	git add .
+	git commit -m "Next Version Comment"
+	git push origin master
+
+
+// VERY IMPORTANT: urls are case sentitive so CSS and JS need to be in capital letters.
+ 
+
+<link rel="stylesheet" href="{{ url_for('static', filename='CSS/style.css') }}" type="text/css" media="all"/>
+    <script type="module" src="{{ url_for('static', filename='JS/script.mjs') }}"></script>
+    
+
+2. Deploy on render.com
+
+create a web service = Settings
+Name: urlshortner
+Region: EUCentral
+Repository: https://github.com/FamedBear16/urlshortnerPP
+Branch: Master
+Build Command: pip install -r requirements.txt
+Start Command: gunicorn app:app                        //app.py with a app = Flask(__name__)
+
+
+
+//CREATE this file
+
+3. Requiremnts.txt
+Flask
+Gunicorn
 
