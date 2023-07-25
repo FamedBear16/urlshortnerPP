@@ -59,3 +59,11 @@ def your_url():
 
 if __name__ == '__main__':
     app.run()
+
+# Start Command in Render: DEfault Value
+# gunicorn your_application.wsgi
+# Replace with. it tells python that def app is in app.py
+# >gunicorn app:app
+
+# pip install gunicorn
+# gunicorn app:app
